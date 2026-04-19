@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pokok SMKS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+    .back {
+    display: flex;
+    color: #009688;
+    width: 20px;
+    margin: 5px;
+    background-color: rgb(228, 228, 228);
+    padding: 6px 12px;
+    border-radius: 5px;
+
+}
+
+.back:hover {
+    background-color: #009688;
+    color: white;
+    width: 25px;
+    border-radius: 7px;
+    transition: all .5s ease;
+}
+
+        .header {
+            background-color: #009688;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            margin: 20px;
+        }
+        .sidebar {
+            width: 25%;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .main {
+            width: 70%;
+            margin-left: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            background-color: #009688;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .button {
+            margin: 10px 0;
+            padding: 10px;
+            color: white;
+            background-color: #f44336;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            text-decoration: underline;
+        }
+        
+        .button-green {
+            background-color: #4CAF50;
+            font-size: 13px;
+        }
+
+        @media only screen and (max-width:1225px) {
+            
+            .header {
+                width: 385px;
+            }
+
+            .container {
+                display: block;
+            }
+
+            .section {
+                width: 345px;
+            }
+
+            .button {
+                display: block;
+                width: 150px;
+                text-align: center;
+                
+            }
+
+            .sidebar a {
+                text-align: center;
+            }
+
+            .sidebar {
+                margin-left: 0px;
+                margin-bottom: 5px;
+                width: 345px;
+            }
+
+            .main {
+                width: 345px;
+                margin-left: 0px;
+            }
+        }
+
+        /* TOMBOL */
+.dark-toggle{
+    position: absolute;
+    right: 15px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+}
+
+/* DARK MODE */
+.dark-mode{
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+.dark-mode .header{
+    background-color: #1e293b;
+}
+
+.dark-mode .sidebar,
+.dark-mode .main{
+    background: #1e293b;
+    color: #e2e8f0;
+}
+
+.dark-mode .section h2{
+    background-color: #334155;
+}
+
+.dark-mode .button{
+    background-color: #ef4444;
+}
+
+.dark-mode .button-green{
+    background-color: #22c55e;
+}
+
+.dark-mode .back{
+    background-color: #334155;
+    color: #e2e8f0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px){
+  .container{
+    width:90%;
+    padding:20px;
+  }
+
+  h1,h2{
+    font-size:18px;
+  }
+
+  .card{
+    padding:15px;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 992px){
+  .sidebar{
+    width:180px;
+  }
+
+  .main{
+    padding:20px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px){
+
+  body{
+    flex-direction:column;
+  }
+
+  /* SIDEBAR JADI TOPBAR */
+  .sidebar{
+    width:100%;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+    height:60px;
+  }
+
+  .sidebar h2{
+    display:none;
+  }
+
+  .sidebar a{
+    font-size:12px;
+  }
+
+  .logout{
+    margin-top:0;
+    padding:6px 10px;
+    font-size:12px;
+  }
+
+  /* MAIN */
+  .main{
+    padding:15px;
+  }
+
+  /* HEADER */
+  .header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+
+  /* CARD GRID */
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  /* INPUT */
+  input{
+    font-size:14px;
+  }
+
+  button{
+    font-size:14px;
+  }
+}
+
+/* HP KECIL */
+@media (max-width: 480px){
+  .container{
+    width:90%;
+    padding:20px;
+  }
+
+  h1,h2{
+    font-size:18px;
+  }
+
+  .card{
+    padding:15px;
+  }
+}
+    </style>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+    <a class="back" href="dashboard.html"><i data-feather="arrow-left"></i></a>
+
+    <div class="header">
+        <h1>Data Pokok SMKS ANTARTIKA</h1>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="section">
+                <h2>Profil</h2>
+                <p>Kepeksek: Moh. Syafie</p>
+                <p>Operator: Sigit M. Yanto</p>
+                <p>Akreditasi: B</p>
+                <p>Kurikulum: Kurikulum Merdeka</p>
+                <p>Lokasi: Jl. Banyu Urip Kidul Gg. II No.37, Banyu Urip, Kec. Sawahan, Surabaya, Jawa Timur 60254</p>
+            </div>
+            <a class="button button-green" href="https://www.instagram.com/smkantartikasurabaya/#">Instagram Sekolah</a>
+            <a class="button" href="https://www.instagram.com/osissmkantartikasby/#">Instagram Osis Sekolah</a>
+        </div>
+
+        <div class="main">
+            <div class="section">
+                <h2>Identitas Sekolah</h2>
+                <p>NPSN: 20532257</p>
+                <p>Status: Swasta</p>
+                <p>Bentuk Pendidikan: SMK</p>
+                <p>Status Kepemilikan: Yayasan</p>
+                <p>SK Pendirian Sekolah: 6/E/Why/III/1974</p>
+                <p>Tanggal SK Pendirian: 1974-11-10</p>
+                <p>SK Izin Operasional: P2T/772/19.08/02/III/2019</p>
+                <p>Tanggal SK Izin Operasional: 2019-03-13</p>
+            </div>
+            
+            <div class="section">
+                <h2>Data Pelengkap</h2>
+                <p>Kebutuhan Khusus Dilayani: Tidak ada</p>
+                <p>Nama Bank: BPD JAWA TIMUR</p>
+                <p>Cabang KCP/Unit: BPD JAWA TIMUR CABANG UNIV. WIJAYA KUSUMA</p>
+                <p>Rekening Atas Nama: SMKSANTARTIKASURABAYA(BOS)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function toggleDark(){
+  document.body.classList.toggle("dark-mode");
+
+  // simpan mode
+  if(document.body.classList.contains("dark-mode")){
+    localStorage.setItem("theme","dark");
+  } else {
+    localStorage.setItem("theme","light");
+  }
+}
+
+// load mode saat buka
+window.onload = function(){
+  if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark-mode");
+  }
+}
+      feather.replace();
+    </script>
+</body>
+</html>

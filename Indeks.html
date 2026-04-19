@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Login System</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Login</h2>
+
+  <div class="input-group">
+    <input type="email" id="email" placeholder="Email">
+  </div>
+
+  <div class="input-group">
+    <div class="input-group password-group">
+  <input type="password" id="password" placeholder="Password">
+  <span class="toggle-pass" onclick="togglePassword()">👁️</span>
+</div>
+  </div>
+
+  <button id="loginBtn">Login</button>
+
+  <div id="error" class="message error"></div>
+  <div id="success" class="message success"></div>
+  <div id="demoInfo" class="message" style="display:none; background:#1e3a8a;
+  color:#bfdbfe;">
+  Gunakan akun demo:<br>
+  Email: <b>smkantiksby@gmail.com</b><br>
+  Password: <b>R8-5G</b>
+</div>
+
+  <div class="links">
+    <a id="resetLink">Reset</a>
+    <a id="forgotLink">Forgot Password?</a>
+  </div>
+</div>
+
+<!-- FORGOT PASSWORD -->
+<div class="modal" id="forgotModal">
+  <div class="modal-content">
+    <h3>Reset Password</h3>
+    <input type="email" id="resetEmail" placeholder="Email"><br><br>
+    <button id="sendReset">Kirim</button><br><br>
+    <button onclick="closeModal('forgotModal')">Batal</button>
+  </div>
+</div>
+
+<!-- LOCK SCREEN -->
+<div class="modal" id="lockModal">
+  <div class="modal-content">
+    <h3>Akun Terkunci</h3>
+    <p>Coba lagi dalam <span id="time" class="countdown">30</span> detik</p>
+  </div>
+</div>
+
+<script src="javascript.js"></script>
+
+</body>
+</html>
